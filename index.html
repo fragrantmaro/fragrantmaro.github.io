@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DuckyAI Player – Offline AI Subtitle Player</title>
+  <meta name="description" content="DuckyAI Player generates subtitles for your videos with AI, completely offline. Export to SRT.">
+  <link rel="icon" type="image/png" href="images/icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DuckyAI Player – Offline AI Subtitle Player">
+  <meta property="og:description" content="Generate AI subtitles for your videos completely offline.">
+  <meta property="og:image" content="images/og.png">
+
+  <style>
+    :root {
+      --violet: #9400ff;
+      --indigo: #4000ff;
+      --ink: #1d1030;
+      --muted: #5c5470;
+      --paper: #faf8ff;
+      --line: #e6def5;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(155deg, var(--violet) 0%, var(--indigo) 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 72px 24px 0;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: end;
+    }
+    .hero-copy { padding-bottom: 72px; align-self: center; }
+    .app-icon {
+      width: 84px;
+      height: 84px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--violet);
+      box-shadow: 0 8px 24px rgba(20, 0, 80, .35);
+      margin-bottom: 28px;
+    }
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+    }
+    .tagline { font-size: 1.25rem; font-weight: 600; margin: 0 0 12px; }
+    .lede { font-size: 1.05rem; max-width: 30em; margin: 0; color: rgba(255,255,255,.85); }
+
+    .hero-shot {
+      width: min(100%, 340px);
+      margin: 0 auto;
+      border-radius: 28px 28px 0 0;
+      overflow: hidden;
+      box-shadow: 0 -4px 40px rgba(10, 0, 60, .45);
+    }
+    .hero-shot img { width: 100%; }
+
+    /* Features */
+    main { max-width: 1040px; margin: 0 auto; padding: 72px 24px 24px; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.1rem); letter-spacing: -0.02em; margin: 0 0 32px; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px 28px;
+      margin: 0 0 80px;
+      padding: 0;
+      list-style: none;
+    }
+    .features li { border-top: 3px solid var(--violet); padding-top: 14px; }
+    .features h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    .features p { margin: 0; color: var(--muted); font-size: .98rem; }
+
+    /* Screenshots */
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 0 0 24px;
+    }
+    .shots figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 24px 56px;
+      color: var(--muted);
+      font-size: .92rem;
+      border-top: 1px solid var(--line);
+    }
+    footer p { margin: 0 0 6px; }
+    footer a { color: var(--indigo); }
+
+    @media (max-width: 760px) {
+      .hero-inner { grid-template-columns: 1fr; padding-top: 48px; }
+      .hero-copy { padding-bottom: 8px; }
+      .shots { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="app-icon"><img src="images/icon.png" alt="DuckyAI Player app icon"></div>
+        <h1>DuckyAI Player</h1>
+        <p class="tagline">Offline AI Subtitle Player</p>
+        <p class="lede">Play your videos and get AI-generated subtitles right on your phone. No internet connection needed.</p>
+      </div>
+      <div class="hero-shot">
+        <img src="images/ducky4.png" alt="A video playing with an AI-generated subtitle at the bottom of the screen">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2>What it does</h2>
+    <ul class="features">
+      <li>
+        <h3>Completely offline</h3>
+        <p>Subtitles are generated on your device, so your videos stay on your phone.</p>
+      </li>
+      <li>
+        <h3>Subtitles as you watch</h3>
+        <p>Open a video without subtitles and get near-real-time AI subtitles during playback.</p>
+      </li>
+      <li>
+        <h3>Your model, your language</h3>
+        <p>Pick Performance for speed or Quality for accuracy, and set a default subtitle language.</p>
+      </li>
+      <li>
+        <h3>Export to SRT</h3>
+        <p>Regenerate, rename, delete, or export subtitles for use in your editing tools.</p>
+      </li>
+    </ul>
+
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <figure><img src="images/ducky3.png" alt="Video list with CC badges showing subtitle language" loading="lazy"></figure>
+      <figure><img src="images/ducky5.png" alt="Settings screen with AI model and language options" loading="lazy"></figure>
+      <figure><img src="images/ducky6.png" alt="Video menu with regenerate and export subtitles options" loading="lazy"></figure>
+    </div>
+
+    <!-- When the app is published, add a store button here, for example:
+    <p><a href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_ID">Get it on Google Play</a></p>
+    -->
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DuckyAI Player</p>
+    <!-- Contact: replace with your address
+    <p>Contact: <a href="mailto:you@example.com">you@example.com</a></p>
+    -->
+  </footer>
+
+</body>
+</html>
